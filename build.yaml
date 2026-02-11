@@ -30,7 +30,7 @@ include:
 
 # Hillside 52
 #   Comment out below if you do not have this board, to save build time
-  - board: nrfmicro_13
+  - board: nrfmicro
     shield: hillside52_left
-  - board: nrfmicro_13
+  - board: nrfmicro
     shield: hillside52_right
