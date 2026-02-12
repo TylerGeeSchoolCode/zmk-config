@@ -11,6 +11,7 @@
 
 &kscan0 {
     compatible = "zmk,kscan";
+    status = "okay";
     #interrupt-cells = <0>;
 
     /* Rows - mirrored due to upside-down orientation */
