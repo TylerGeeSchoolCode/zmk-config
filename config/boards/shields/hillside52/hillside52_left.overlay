@@ -9,37 +9,27 @@
 
 #include "hillside52.dtsi"
 
-/ {
-    chosen {
-        zmk,physical_layout = &kscan0; /* link to your left kscan node */
-    };
-};
-
 &kscan0 {
-    compatible = "zmk,kscan";
-    status = "okay";
-    label = "kscan_left";   /* only left half */
-    #interrupt-cells = <0>;
-
-    /* Rows - mirrored due to upside-down orientation */
+    /* Rows - mirrored */
     row-gpios = <
-        &pro_micro 2  GPIO_ACTIVE_HIGH  /* row0 */
-        &pro_micro 3  GPIO_ACTIVE_HIGH  /* row1 */
-        &pro_micro 6  GPIO_ACTIVE_HIGH  /* row2 */
-        &pro_micro 7  GPIO_ACTIVE_HIGH  /* row3 */
+        &pro_micro 2 GPIO_ACTIVE_HIGH
+        &pro_micro 3 GPIO_ACTIVE_HIGH
+        &pro_micro 6 GPIO_ACTIVE_HIGH
+        &pro_micro 7 GPIO_ACTIVE_HIGH
     >;
 
-    /* Columns - mirrored due to upside-down orientation */
+    /* Columns - mirrored */
     col-gpios = <
-        &pro_micro 2  GPIO_ACTIVE_HIGH  /* col0 */
-        &pro_micro 3  GPIO_ACTIVE_HIGH  /* col1 */
-        &pro_micro 6  GPIO_ACTIVE_HIGH  /* col2 */
-        &pro_micro 7  GPIO_ACTIVE_HIGH  /* col3 */
-        &pro_micro 5  GPIO_ACTIVE_HIGH  /* col4 */
-        &pro_micro 11 GPIO_ACTIVE_HIGH  /* col5 */
+        &pro_micro 2  GPIO_ACTIVE_HIGH
+        &pro_micro 3  GPIO_ACTIVE_HIGH
+        &pro_micro 6  GPIO_ACTIVE_HIGH
+        &pro_micro 7  GPIO_ACTIVE_HIGH
+        &pro_micro 5  GPIO_ACTIVE_HIGH
+        &pro_micro 11 GPIO_ACTIVE_HIGH
     >;
 };
 
 &left_encoder {
+    /* just enable the encoder */
     status = "okay";
 };
