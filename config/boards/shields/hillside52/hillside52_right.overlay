@@ -12,7 +12,6 @@
 / {
     chosen {
         zmk,physical_layout = &kscan0;
-        zmk,underglow = &led_strip;  /* optional if you have LEDs */
     };
 };
 
