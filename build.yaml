@@ -32,5 +32,5 @@ include:
 #   Comment out below if you do not have this board, to save build time
   - board: nice_nano
     shield: hillside52_left
-  - board: nrfmicro/nrf52840/flipped
-    shield: nice_nano
+  - board: nice_nano
+    shield: hillside52_right
