@@ -5,13 +5,14 @@
  *
  * Hillside52 Left Half - Upside-down Nice!Nano
  * 4 rows x 6 cols
+ * zmk,physical_layout = &kscan0;
  */
 
 #include "hillside52.dtsi"
 
 / {
     chosen {
-        zmk,physical_layout = &kscan0;
+        zmk,kscan = &kscan0;
     };
 };
 
