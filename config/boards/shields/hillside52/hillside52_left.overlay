@@ -12,13 +12,13 @@
 / {
     chosen {
         zmk,physical_layout = &kscan0; /* link to your left kscan node */
-        zmk,underglow = &led_strip;    /* keep LED */
     };
 };
 
 &kscan0 {
     compatible = "zmk,kscan";
     status = "okay";
+    label = "kscan_left";   /* only left half */
     #interrupt-cells = <0>;
 
     /* Rows - mirrored due to upside-down orientation */
