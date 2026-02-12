@@ -56,9 +56,9 @@
  			 */
 			
 			bindings = <
-&kp Copy   	&kp 1       &kp 2       &kp 3       &kp 4       &kp 5         &kp 6       &kp 7       &kp 8       &kp 9       &kp 0       &trans
-&kp Cut     &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHIFT  &kp Paste  	  &kp PG_UP   &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT   &kp PG_DN
-&kp LSHIFT  &kp F1      &kp F2      &kp F3      &kp F4      &kp F5        &kp Undo    &kp Redo    &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &trans
+&kp LC(C)   &kp 1       &kp 2       &kp 3       &kp 4       &kp 5         &kp 6       &kp 7       &kp 8       &kp 9       &kp 0       &trans
+&kp LC(X)   &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHIFT  &kp LC(V)  	  &kp PG_UP   &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT   &kp PG_DN
+&kp LSHIFT  &kp F1      &kp F2      &kp F3      &kp F4      &kp F5        &kp LC(Z)   &kp LC(Y)   &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &trans
 &kp F11     &kp F12     &trans      &trans      &trans      &trans        &trans      &mo ADJ_L   &trans      &trans      &trans      &kp RCTRL   &kp HOME    &kp END
     		>;
 
