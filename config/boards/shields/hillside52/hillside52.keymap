@@ -17,11 +17,11 @@
 #define SYM_L    2
 #define ADJ_L    3
 
-#define Undo   &kp LC_Z
-#define Cut    &kp LC_X
-#define Copy   &kp LC_C
-#define Paste  &kp LC_V
-#define Redo   &kp LC_Y
+#define Undo   LC(Z)
+#define Cut    LC(X)
+#define Copy   LC(C)
+#define Paste  LC(V)
+#define Redo   LC(Y)
 
 / {
 	keymap {
