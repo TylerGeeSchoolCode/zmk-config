@@ -7,8 +7,5 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: hillside52_dongle
-      path: dongle-module
-      revision: main
   self:
     path: config
