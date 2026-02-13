@@ -2,4 +2,4 @@ file_format: "1"
 id: hillside52_dongle
 name: Hillside52 Dongle
 type: shield
-requires: [seeeduino_xiao_ble]
+requires: [xiao_ble]
