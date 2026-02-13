@@ -28,17 +28,18 @@
 / {
     chosen {
         zmk,kscan = &mock_kscan;
-        zmk,physical-layout = &default_transform;
+        zmk,physical-layout = &physical_layout0;
+        zmk,matrix-transform = &zmk_matrix_transform_default;
     };
 
-    mock_kscan: mock_kscan_0 {
-        compatible = "zmk,kscan-mock";
-        columns = <0>;
-        rows = <0>;
-        events = <0>;
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Default Layout";
+        transform = <&zmk_matrix_transform_default>;
+        kscan = <&mock_kscan>;
     };
 
-    default_transform: keymap_transform_0 {
+    zmk_matrix_transform_default: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <12>;
         rows = <5>;
