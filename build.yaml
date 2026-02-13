@@ -26,5 +26,5 @@ include:
     shield: hillside52_right
 
   # Hillside 52 Dongle (Central)
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: hillside52_dongle

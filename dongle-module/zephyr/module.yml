@@ -1,0 +1,4 @@
+name: hillside52_dongle
+build:
+  cmake: .
+  kconfig: .
