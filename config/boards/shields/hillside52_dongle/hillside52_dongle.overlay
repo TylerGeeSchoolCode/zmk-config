@@ -3,7 +3,6 @@
 / {
     chosen {
         zmk,kscan = &mock_kscan;
-        zmk,usb = &usb;
     };
 
     mock_kscan: mock_kscan_0 {
