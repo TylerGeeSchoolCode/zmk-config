@@ -9,6 +9,14 @@
 
 #include "hillside52.dtsi"
 
+/ {
+    chosen {
+        zmk,split-role = "peripheral";
+        zmk,kscan = &kscan0;
+        zmk,physical-layout = &default_transform;
+    };
+};
+
 &default_transform {
     col-offset = <6>;
 };
