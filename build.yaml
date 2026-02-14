@@ -25,6 +25,15 @@ include:
   - board: nice_nano
     shield: hillside52_right
 
+  # settings_reset For Keyboard
+  - board: nice_nano
+    shield: settings_reset
+
   # Hillside 52 Dongle (Central)
   - board: xiao_ble
     shield: hillside52_dongle
+
+  # settings_reset For Dongle
+  - board: xiao_ble
+    shield: settings_reset
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
