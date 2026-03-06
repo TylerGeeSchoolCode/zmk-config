@@ -10,6 +10,9 @@ if SHIELD_HILLSIDE52_RIGHT
     config ZMK_SPLIT_ROLE_CENTRAL
         default n
 
+    config ZMK_USB=n
+        default n
+
 endif
 
 if SHIELD_HILLSIDE52_LEFT || SHIELD_HILLSIDE52_RIGHT
