@@ -10,20 +10,32 @@ include:
   # =============================================
   # Hillside 52 Keyboard Firmware(s) - No Dongle (Left as Central)
   # =============================================
-  ### - board: nice_nano//zmk
-  ###   shield: hillside52_left
-  ###   snippet: studio-rpc-usb-uart
-  ###   cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS=1 -DCONFIG_ZMK_STUDIO=y
-  ###   artifact-name: hillside52_left-central
+  - board: nice_nano//zmk
+    shield: hillside52_left
+    snippet: studio-rpc-usb-uart
+    artifact-name: hillside52_left-central
+    cmake-args: >
+      -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y 
+      -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS=2 
+      -DCONFIG_ZMK_STUDIO=y
+      -DCONFIG_ZMK_STUDIO_LOCKING=y
+      -DCONFIG_ZMK_STUDIO_LOCK_IDLE_TIMEOUT_SEC=500
+      -DCONFIG_ZMK_STUDIO_LOCK_ON_DISCONNECT=y
 
   ## =============================================
   ## Hillside 52 Dongle Firmware(s) - Dongle Mode (Both Halves Peripheral)
   ## =============================================
   # - board: xiao_ble//zmk
   #   shield: hillside52_dongle
-  #   snippet: studio-rpc-usb-uart zmk-usb-logging
-  #   cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS=2 -DCONFIG_ZMK_STUDIO=y
   #   artifact-name: hillside52_dongle
+  #   snippet: studio-rpc-usb-uart zmk-usb-logging
+  #   cmake-args: >
+  #     -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y 
+  #     -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS=2 
+  #     -DCONFIG_ZMK_STUDIO=y
+  #     -DCONFIG_ZMK_STUDIO_LOCKING=y
+  #     -DCONFIG_ZMK_STUDIO_LOCK_IDLE_TIMEOUT_SEC=500
+  #     -DCONFIG_ZMK_STUDIO_LOCK_ON_DISCONNECT=y
   #
   # - board: nice_nano//zmk
   #   shield: hillside52_left

@@ -1,40 +1,32 @@
-## ================= Left Half =================
 if SHIELD_HILLSIDE52_LEFT
 
-config ZMK_KEYBOARD_NAME
-    default "Hillside52"
+    config ZMK_KEYBOARD_NAME
+        default "Hillside52"
 
 endif
 
-## ================= Right Half (Peripheral) =================
 if SHIELD_HILLSIDE52_RIGHT
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default n
+    config ZMK_SPLIT_ROLE_CENTRAL
+        default n
 
 endif
 
-## ================= Both Halves =================
 if SHIELD_HILLSIDE52_LEFT || SHIELD_HILLSIDE52_RIGHT
 
-# Enable ZMK as a split keyboard
-config ZMK_SPLIT
-    default y
+    config ZMK_SPLIT
+        default y
 
-# Enable ZMK as a Bluetooth keyboard
-config ZMK_BLE
-    default y
+    config ZMK_BLE
+        default y
 
-# Enable ZMK as a split BLE keyboard
-config ZMK_SPLIT_BLE
-    default y
+    config ZMK_SPLIT_BLE
+        default y
 
-# Enable ZMK as a USB keyboard
-config ZMK_USB
-    default y
+    config ZMK_USB
+        default y
 
-# External power / battery
-config ZMK_EXT_POWER
-    default y
+    config ZMK_EXT_POWER
+        default y
 
 endif
