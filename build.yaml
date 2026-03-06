@@ -15,7 +15,6 @@ include:
     snippet: studio-rpc-usb-uart
     artifact-name: hillside52_left-central
     cmake-args: >
-      -DCONFIG_USB=y
       -DCONFIG_ZMK_USB=y
       -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y 
       -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS=2 
