@@ -1,13 +1,20 @@
 ---
 include:
+  ## =============================================
+  ## settings_reset Firmware For Each Device
+  ## =============================================
+  # - board: nice_nano//zmk
+  #   shield: settings_reset
+  # - board: xiao_ble//zmk
+  #   shield: settings_reset
   # =============================================
   # Hillside 52 Keyboard Firmware(s) - No Dongle (Left as Central)
   # =============================================
-  - board: nice_nano//zmk
-    shield: hillside52_left
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS=1 -DCONFIG_ZMK_STUDIO=y
-    artifact-name: hillside52_left-central
+  ### - board: nice_nano//zmk
+  ###   shield: hillside52_left
+  ###   snippet: studio-rpc-usb-uart
+  ###   cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS=1 -DCONFIG_ZMK_STUDIO=y
+  ###   artifact-name: hillside52_left-central
 
   ## =============================================
   ## Hillside 52 Dongle Firmware(s) - Dongle Mode (Both Halves Peripheral)
@@ -21,15 +28,7 @@ include:
   # - board: nice_nano//zmk
   #   shield: hillside52_left
   #   artifact-name: hillside52_left-peripheral
-  #
-  # - board: nice_nano//zmk
-  #   shield: hillside52_right
-  #   artifact-name: hillside52_right-peripheral
-  #
-  ## =============================================
-  ## settings_reset Firmware For Each Device
-  ## =============================================
-  # - board: nice_nano//zmk
-  #   shield: settings_reset
-  # - board: xiao_ble//zmk
-  #   shield: settings_reset
+
+  - board: nice_nano//zmk
+    shield: hillside52_right
+    artifact-name: hillside52_right-peripheral
