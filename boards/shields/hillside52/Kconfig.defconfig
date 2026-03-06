@@ -23,9 +23,6 @@ if SHIELD_HILLSIDE52_LEFT || SHIELD_HILLSIDE52_RIGHT
     config ZMK_SPLIT_BLE
         default y
 
-    config ZMK_USB
-        default y
-
     config ZMK_EXT_POWER
         default y
 
