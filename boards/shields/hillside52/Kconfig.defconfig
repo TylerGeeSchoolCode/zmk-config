@@ -33,9 +33,15 @@ if SHIELD_HILLSIDE52_LEFT && ZMK_SPLIT_ROLE_CENTRAL
         default 500
     config ZMK_STUDIO_LOCK_ON_DISCONNECT
         default y
+
+    config ZMK_WPM
+        default y
 endif # SHIELD_HILLSIDE52_LEFT && ZMK_SPLIT_ROLE_CENTRAL
 
 if SHIELD_HILLSIDE52_RIGHT || (SHIELD_HILLSIDE52_LEFT && !ZMK_SPLIT_ROLE_CENTRAL)
+    config ZMK_SPLIT_ROLE_CENTRAL
+        default n
+
     config BT_MAX_CONN
         default 1
     config BT_MAX_PAIRED
