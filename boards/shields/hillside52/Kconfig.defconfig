@@ -1,6 +1,6 @@
 if SHIELD_HILLSIDE52_LEFT
     config ZMK_KEYBOARD_NAME
-        default "ZMK - Hillside52"
+        default "Hillside52"
 
     config ZMK_USB
         default y
