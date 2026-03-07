@@ -36,13 +36,6 @@ if SHIELD_HILLSIDE52_LEFT && ZMK_SPLIT_ROLE_CENTRAL
 endif # SHIELD_HILLSIDE52_LEFT && ZMK_SPLIT_ROLE_CENTRAL
 
 if SHIELD_HILLSIDE52_RIGHT || (SHIELD_HILLSIDE52_LEFT && !ZMK_SPLIT_ROLE_CENTRAL)
-    config ZMK_SPLIT_ROLE_CENTRAL
-        default n
-    config ZMK_USB
-        default n
-    config ZMK_STUDIO
-        default n
-
     config BT_MAX_CONN
         default 1
     config BT_MAX_PAIRED
