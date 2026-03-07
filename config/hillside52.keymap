@@ -15,15 +15,15 @@
             // ╭───────────────────────────╮         ╭───────────────────────────╮
             // │TAB  q   w   e   r   t     │         │     y   u   i   o   p BSPC│
             // │ `   a   s   d   f   g     ╰─╮     ╭─╯     h   j   k   l   ;   ' │
-            // │[+]  z‌   x‌   c‌   v‌   b‌  [+]  ╰─╮ ╭─╯  ENT  h   n   m   ,   .   / │
-            // |ESC WIN SUL ╭─╮ ALT CTR LS^ [+]│ │[+] SPC [+] [+] ╭─╮ HME END ENT│
+            // │[+]  z‌   x‌   c‌   v‌   b‌  [+]  ╰─╮ ╭─╯  ENT  n   m   ,   .   /   F │
+            // |ESC WIN SUL ╭─╮ ALT CTR LS^ [+]│ │[+] SPC [+] [+] ╭─╮ HME ENT END│
             // ╰────────────╯ ╰────────────────╯ ╰────────────────╯ ╰────────────╯
             display-name = "QWERTY Layer";
             bindings = <
                 &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P &kp BSPC
                 &kp GRAVE  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp SQT
                 &kp F  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH  &kp F
-                &kp ESC  &kp LGUI  &studio_unlock  &kp HOME  &kp END  &kp ENTER
+                &kp ESC  &kp LGUI  &studio_unlock  &kp HOME &kp F &kp END
                 &kp LALT  &kp LCTRL  &sk LSHIFT  &kp F  &kp F  &kp F  &kp ENTER  &kp SPACE  &kp F  &kp F
             >;
         };

@@ -1,19 +1,58 @@
-if SHIELD_HILLSIDE52_LEFT
-
+if SHIELD_HILLSIDE52_LEFT && ZMK_SPLIT_ROLE_CENTRAL
     config ZMK_KEYBOARD_NAME
-        default "Hillside52"
+        default "ZMK - Hillside52"
 
-endif
+    config ZMK_USB
+        default y
+    config ZMK_USB_BOOT
+        default y
 
-if SHIELD_HILLSIDE52_RIGHT
+    config BT_MAX_CONN
+        default 5
+    config BT_MAX_PAIRED
+        default 5
 
+    config ZMK_SPLIT_PERIPHERAL_HID_INDICATORS
+        default y
+
+    config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING
+        default y
+    config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY
+        default y
+
+    config ZMK_SPLIT_BLE_CENTRAL_POSITION_QUEUE_SIZE
+        default 16
+    config ZMK_SPLIT_BLE_CENTRAL_SPLIT_RUN_QUEUE_SIZE
+        default 16
+
+    config ZMK_STUDIO
+        default y
+    config ZMK_STUDIO_LOCKING
+        default y
+    config ZMK_STUDIO_LOCK_IDLE_TIMEOUT_SEC
+        default 500
+    config ZMK_STUDIO_LOCK_ON_DISCONNECT
+        default y
+endif # SHIELD_HILLSIDE52_LEFT && ZMK_SPLIT_ROLE_CENTRAL
+
+if SHIELD_HILLSIDE52_RIGHT || (SHIELD_HILLSIDE52_LEFT && !ZMK_SPLIT_ROLE_CENTRAL)
     config ZMK_SPLIT_ROLE_CENTRAL
         default n
+    config ZMK_USB
+        default n
+    config ZMK_STUDIO
+        default n
 
-endif
+    config BT_MAX_CONN
+        default 1
+    config BT_MAX_PAIRED
+        default 1
+
+    config ZMK_EXT_POWER
+        default y
+endif # SHIELD_HILLSIDE52_RIGHT || (SHIELD_HILLSIDE52_LEFT && !ZMK_SPLIT_ROLE_CENTRAL)
 
 if SHIELD_HILLSIDE52_LEFT || SHIELD_HILLSIDE52_RIGHT
-
     config ZMK_SPLIT
         default y
 
@@ -23,7 +62,4 @@ if SHIELD_HILLSIDE52_LEFT || SHIELD_HILLSIDE52_RIGHT
     config ZMK_SPLIT_BLE
         default y
 
-    config ZMK_EXT_POWER
-        default y
-
-endif
+endif # SHIELD_HILLSIDE52_LEFT || SHIELD_HILLSIDE52_RIGHT

@@ -7,19 +7,12 @@ include:
     shield: hillside52_left
     artifact-name: hillside52_left-central
     snippet: studio-rpc-usb-uart
-    cmake-args: >
-      -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y 
-      -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS=2 
-      -DCONFIG_ZMK_USB=y
-      -DCONFIG_ZMK_WPM=y
-      -DCONFIG_ZMK_STUDIO=y
-      -DCONFIG_ZMK_STUDIO_LOCKING=y
-      -DCONFIG_ZMK_STUDIO_LOCK_IDLE_TIMEOUT_SEC=500
-      -DCONFIG_ZMK_STUDIO_LOCK_ON_DISCONNECT=y
+    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS=1 
 
   - board: nice_nano//zmk
     shield: hillside52_right
     artifact-name: hillside52_right-peripheral
+
   ## =============================================
   ## settings_reset Firmware For Each Device
   ## =============================================
