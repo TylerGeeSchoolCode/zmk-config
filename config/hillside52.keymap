@@ -1,10 +1,15 @@
-#include <dt-bindings/zmk/keys.h>
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#define QWERTY_L 0
+#define NAV_L    1
+#define SYM_L    2
+#define ADJ_L    3
+
 / {
-    // Define a default keymap here.
     keymap {
         compatible = "zmk,keymap";
 
@@ -15,18 +20,19 @@
             // ╭───────────────────────────╮         ╭───────────────────────────╮
             // │TAB  q   w   e   r   t     │         │     y   u   i   o   p BSPC│
             // │ `   a   s   d   f   g     ╰─╮     ╭─╯     h   j   k   l   ;   ' │
-            // │[+]  z‌   x‌   c‌   v‌   b‌  [+]  ╰─╮ ╭─╯  ENT  n   m   ,   .   /   F │
-            // |ESC WIN SUL ╭─╮ ALT CTR LS^ [+]│ │[+] SPC [+] [+] ╭─╮ HME ENT END│
+            // │[+]  z‌   x‌   c‌   v‌   b‌  CTR  ╰─╮ ╭─╯  [+]  n   m   ,   .   /  [+]│
+            // | 🕨  🕩  🕪  ╭─╮ WIN ALT LS^ ADJ│ │ENT SPC CTR WIN ╭─╮ HME END ENT│
             // ╰────────────╯ ╰────────────────╯ ╰────────────────╯ ╰────────────╯
             display-name = "QWERTY Layer";
             bindings = <
                 &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P &kp BSPC
-                &kp GRAVE  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp SQT
-                &kp F  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH  &kp F
-                &kp ESC  &kp LGUI  &studio_unlock  &kp HOME &kp F &kp END
-                &kp LALT  &kp LCTRL  &sk LSHIFT  &kp F  &kp F  &kp F  &kp ENTER  &kp SPACE  &kp F  &kp F
+                &gresc  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp SQT
+                &none  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH  &kp PG_UP
+                &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp HOME  &kp END  &kp PG_DN
+                &kp LGUI  &kp LALT  &sk LSHIFT  &sl ADJ_L  &kp LCTRL  &none  &kp ENTER  &kp SPACE  &kp  RCTRL  &kp RGUI
             >;
         };
+
 
         nav_layer {
             //                        ╭──────────────────╮
@@ -38,9 +44,14 @@
             // │___ ___ ___ ___ ___ ___ ___  ╰─╮ ╭─╯  ___ ___ ___ ___ ___ ___ ___│
             // |___ ___ ___ ╭─╮ ___ ___ ___ ___│ │___ ___ ___ ___ ╭─╮ ___ ___ ___│
             // ╰────────────╯ ╰────────────────╯ ╰────────────────╯ ╰────────────╯
-            // display-name = "Navigation Layer";
-            // bindings = <>;
-            status = "reserved";
+            display-name = "Navigation Layer";
+            bindings = <
+                &none &none &none &none &none &none &none &none &none &none &none &none
+                &none &none &none &none &none &none &none &none &none &none &none &none
+                &none &none &none &none &none &none &none &none &none &none &none &none
+                &none &none &none &none &none &none
+                &none &none &none &none &none &none &none &none &none &none
+            >;
         };
 
         symbol_layer {
@@ -53,9 +64,34 @@
             // │___ ___ ___ ___ ___ ___ ___  ╰─╮ ╭─╯  ___ ___ ___ ___ ___ ___ ___│
             // |___ ___ ___ ╭─╮ ___ ___ ___ ___│ │___ ___ ___ ___ ╭─╮ ___ ___ ___│
             // ╰────────────╯ ╰────────────────╯ ╰────────────────╯ ╰────────────╯
-            // display-name = "Symbol Layer";
-            // bindings = <>;
-            status = "reserved";
+            display-name = "Symbol Layer";
+            bindings = <
+                &none &none &none &none &none &none &none &none &none &none &none &none
+                &none &none &none &none &none &none &none &none &none &none &none &none
+                &none &none &none &none &none &none &none &none &none &none &none &none
+                &none &none &none &none &none &none
+                &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+
+        adjust_layer {
+            //                          ╭──────────────╮
+            //                          │ ADJUST LAYER │
+            //                          ╰──────────────╯
+            // ╭───────────────────────────╮         ╭───────────────────────────╮
+            // │___ ___ ___ ___ ___ ___    │         │    ___ ___ ___ ___ ___ ___│
+            // │___ ___ ___ ___ ___ ___    ╰─╮     ╭─╯    ___ ___ ___ ___ ___ ___│
+            // │___ ___ ___ ___ ___ ___ ___  ╰─╮ ╭─╯  ___ ___ ___ ___ ___ ___ ___│
+            // |___ ___ ___ ╭─╮ ___ ___ ___ ___│ │___ ___ ___ ___ ╭─╮ ___ ___ ___│
+            // ╰────────────╯ ╰────────────────╯ ╰────────────────╯ ╰────────────╯
+            display-name = "Leader Layer";
+            bindings = <
+                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR &none &none &none &none &none &kp C_MUTE
+                &none &none &none &none &none &bootloader &none &none &none &none &none &none
+                &none &none &none &ext_power EP_OFF &ext_power EP_ON &sys_reset &none &none &none &none &none  &kp C_VOL_UP
+                &out OUT_BLE &out OUT_USB &studio_unlock  &none &none &kp C_VOL_DN
+                &none &none &none &none &to QWERTY_L &none &to QWERTY_L &none &none &to QWERTY_L
+            >;
         };
     };
 };
